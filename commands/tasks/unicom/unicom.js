@@ -95,10 +95,10 @@ var start = async (params) => {
     await require('./dailyBookVideo').doTask(request, options)
   }, taskOption)
 
-  await scheduler.regTask('dailyBookLuckdraw', async (request) => {
+ // await scheduler.regTask('dailyBookLuckdraw', async (request) => {
     // 首页-小说-阅读福利抽大奖
-    await require('./dailyBookLuckdraw').doTask(request, options)
-  }, taskOption)
+  //  await require('./dailyBookLuckdraw').doTask(request, options)
+ // }, taskOption)
 
   // 首页-签到有礼-免费领-1G流量日包
   await scheduler.regTask('daily1GFlowTask', async (request) => {
@@ -130,34 +130,34 @@ var start = async (params) => {
   // })
 
   // 首页-签到有礼-免费抽-赢vivo x60
-  await scheduler.regTask('dailyNcow', async (request) => {
-    await require('./dailyNcow').doTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('dailyNcow', async (request) => {
+ //   await require('./dailyNcow').doTask(request, options)
+ // }, taskOption)
 
   // 首页-签到有礼-免费抽-拿红米笔记本-接元宝
-  await scheduler.regTask('dailyIngots', async (request) => {
-    await require('./dailyIngots').doTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('dailyIngots', async (request) => {
+//    await require('./dailyIngots').doTask(request, options)
+ // }, taskOption)
 
   // 首页-签到有礼-免费抽-抓OPPO手机
-  await scheduler.regTask('dailyGrabdollPage', async (request) => {
-    await require('./dailyGrabdollPage').doTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('dailyGrabdollPage', async (request) => {
+ //   await require('./dailyGrabdollPage').doTask(request, options)
+ // }, taskOption)
 
   // 首页-签到有礼-免费抽-拿666积分-豪礼大派送抽奖
-  await scheduler.regTask('jflottery', async (request) => {
-    await require('./jflottery').timesDraw(request, options)
-  }, taskOption)
+ // await scheduler.regTask('jflottery', async (request) => {
+ //   await require('./jflottery').timesDraw(request, options)
+ // }, taskOption)
 
   // 首页-签到有礼-免费抽-拿苹果iPad Pro(摇一摇)
-  await scheduler.regTask('dailyYYY', async (request) => {
-    await require('./dailyYYY').doTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('dailyYYY', async (request) => {
+ //   await require('./dailyYYY').doTask(request, options)
+ // }, taskOption)
 
   // 首页-签到有礼-免费抽-华为mate40pro(刮刮乐)
-  await scheduler.regTask('dailyVideoScratchcard', async (request) => {
-    await require('./dailyVideoScratchcard').doTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('dailyVideoScratchcard', async (request) => {
+ //   await require('./dailyVideoScratchcard').doTask(request, options)
+ // }, taskOption)
 
   // 首页-签到有礼-免费抽-赢三星Galaxy Z(试试手气)
   // 活动已下线
@@ -170,14 +170,14 @@ var start = async (params) => {
   // })
 
   // 首页-签到有礼-免费抽-拆华为Pad(去抽奖)
-  await scheduler.regTask('dailyLKMH', async (request) => {
-    await require('./dailyLKMH').doTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('dailyLKMH', async (request) => {
+ //   await require('./dailyLKMH').doTask(request, options)
+ // }, taskOption)
 
   // 首页-签到有礼-免费抽-拿iPhone12(摇一摇)
-  await scheduler.regTask('dailyYYQ', async (request) => {
-    await require('./dailyYYQ').doTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('dailyYYQ', async (request) => {
+//    await require('./dailyYYQ').doTask(request, options)
+//  }, taskOption)
 
   // 首页-签到有礼-免费抽-赢Apple Watch(去抽奖)
   // 游戏已下线
@@ -290,9 +290,9 @@ var start = async (params) => {
   }, taskOption)
 
   // 首页-积分乐园-集牛卡
-  await scheduler.regTask('newYearUserSign', async (request) => {
-    await require('./newYearUserSign').doTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('newYearUserSign', async (request) => {
+  //  await require('./newYearUserSign').doTask(request, options)
+  //}, taskOption)
 
   // 首页-签到有礼-免费拿-猜拳拿奖
   await scheduler.regTask('dailyFingerSign', async (request) => {
@@ -326,27 +326,27 @@ var start = async (params) => {
   }, taskOption)
 
   // 冬奥专区-赢冬奥纪念品-玩游戏抽奖
-  await scheduler.regTask('olympicgame', async (request) => {
-    await require('./olympicgame').doTask(request, options)
-  }, taskOption)
+  //await scheduler.regTask('olympicgame', async (request) => {
+  //  await require('./olympicgame').doTask(request, options)
+ // }, taskOption)
 
 
   // 我的钱包-沃钱包-幸运抽大奖
-  await scheduler.regTask('dailystw', async (request) => {
-    await require('./dailystw').doTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('dailystw', async (request) => {
+ //   await require('./dailystw').doTask(request, options)
+ // }, taskOption)
 
 
   // 沃钱包-联通支付日-转盘抽奖
-  await scheduler.regTask('PayDayParty', async (request) => {
-    await require('./PayDayParty').doTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('PayDayParty', async (request) => {
+ //   await require('./PayDayParty').doTask(request, options)
+//  }, taskOption)
 
 
   // 冬奥-冰雪俱乐部-联通客户日-幸运九宫格
-  await scheduler.regTask('dailyClubLottery', async (request) => {
-    await require('./dailyClubLottery').doTask(request, options)
-  }, taskOption)
+//  await scheduler.regTask('dailyClubLottery', async (request) => {
+//    await require('./dailyClubLottery').doTask(request, options)
+//  }, taskOption)
 
   // 积分商城-疯踩小橙（沃耀联通小游戏）
   await scheduler.regTask('woyaoliantong', async (request) => {
@@ -383,32 +383,32 @@ var start = async (params) => {
   })
 
   // 每日0点自动兑换流量
-//  await scheduler.regTask('exchangeDFlow', async (request) => {
-//    await require('./exchangeDFlow').doTask(request, options)
-//  }, {
-//    ...taskOption,
-//    startTime: 0,
-//    startHours: 0,
-//    ignoreRelay: true
-//  })
+  await scheduler.regTask('exchangeDFlow', async (request) => {
+    await require('./exchangeDFlow').doTask(request, options)
+  }, {
+    ...taskOption,
+    startTime: 0,
+    startHours: 0,
+    ignoreRelay: true
+  })
 
   // 定时检测流量兑换
   // 可使用 --exchangeDFlowCircle-intervalTime 1800 选项指定流量检查间隔时间，单位秒
   // 可使用 --exchangeDFlowCircle-minFlow 200 选项指定流量检查最小值
   // 可使用 --exchangeDFlowCircle-productId 21010621565413402 选项指定兑换流量包ID
-//  let { 'exchangeDFlowCircle-intervalTime': intervalTime = 1800 } = options
-//  if (typeof intervalTime !== 'number') {
-//    intervalTime = 1800
-//  }
-//  await scheduler.regTask('exchangeDFlowCircle', async (request) => {
-//    await require('./exchangeDFlow').doCircleCheck(request, options)
+  //let { 'exchangeDFlowCircle-intervalTime': intervalTime = 1800 } = options
+ // if (typeof intervalTime !== 'number') {
+ //   intervalTime = 1800
+ // }
+ // await scheduler.regTask('exchangeDFlowCircle', async (request) => {
+ //   await require('./exchangeDFlow').doCircleCheck(request, options)
 //  }, {
-//    ...taskOption,
-//    isCircle: true,
-//    intervalTime: intervalTime,
+ //   ...taskOption,
+ //   isCircle: true,
+ //   intervalTime: intervalTime,
 //    startTime: 5 * 60,
 //    ignoreRelay: true
-//  })
+ // })
 
   // 每日奖励信息结果推送
   if (!('asm_func' in process.env) || process.env.asm_func === 'false') {

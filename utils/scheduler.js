@@ -15,9 +15,9 @@ String.prototype.replaceWithMask = function (start, end) {
 
 const randomDate = (options) => {
     let startDate = moment();
-    let endDate = moment().endOf('days').subtract(2, 'hours');
+    let endDate = moment().endOf('days').subtract(24, 'hours');
 
-    let defaltMinStartDate = moment().startOf('days').add('4', 'hours')
+    let defaltMinStartDate = moment().startOf('days').add('2', 'hours')
     if (startDate.isBefore(defaltMinStartDate, 'minutes')) {
         startDate = defaltMinStartDate
     }
@@ -70,7 +70,7 @@ let scheduler = {
             let options = tasks[taskName].options || {}
             let willTime = moment(randomDate(options));
             // 任务的随机延迟时间
-            let waitTime = options.dev ? 0 : Math.floor(Math.random() * (options.waitTime || 60))
+            let waitTime = options.dev ? 0 : Math.floor(Math.random() * (options.waitTime || 50))
             if (options) {
                 if (options.isCircle || options.dev) {
                     willTime = moment().startOf('days');
@@ -90,7 +90,7 @@ let scheduler = {
             queues.push({
                 taskName: taskName,
                 taskState: 0,
-                willTime: willTime.format('YYYY-MM-DD 00:00:00'),
+                willTime: willTime.format('YYYY-MM-DD HH:mm:ss'),
                 waitTime: waitTime
             })
         }
@@ -233,7 +233,7 @@ let scheduler = {
         scheduler.taskKey = taskKey || 'default'
         if (scheduler.isTryRun) {
             console.info('!!!当前运行在TryRun模式，仅建议在测试时运行!!!')
-            await new Promise((resolve) => setTimeout(resolve, 300))
+            await new Promise((resolve) => setTimeout(resolve, 3000))
         }
         process.env['taskKey'] = [command, scheduler.taskKey].join('_')
         process.env['command'] = command
@@ -307,7 +307,7 @@ let scheduler = {
                     try {
                         if (task.waitTime) {
                             console.info('延迟执行', task.taskName, task.waitTime, 'seconds')
-                            await new Promise((resolve, reject) => setTimeout(resolve, task.waitTime * 0))
+                            await new Promise((resolve, reject) => setTimeout(resolve, task.waitTime * 1000))
                         }
 
                         let ttt = tasks[task.taskName]
@@ -325,7 +325,7 @@ let scheduler = {
                                 isupdate = true
                             }
                             if (ttt.options.isCircle && ttt.options.intervalTime) {
-                                newTask.willTime = moment().add(ttt.options.intervalTime, 'seconds').format('YYYY-MM-DD 00:00:00')
+                                newTask.willTime = moment().add(ttt.options.intervalTime, 'seconds').format('YYYY-MM-DD HH:mm:ss')
                                 isupdate = true
                             }
                         } else {
@@ -348,7 +348,7 @@ let scheduler = {
                             scheduler.updateTaskFile(task, newTask)
                         } else {
                             console.info('任务错误：', err)
-                            if (task.failNum > 5) {
+                            if (task.failNum > 3) {
                                 console.error('任务错误次数过多，停止该任务后续执行')
                                 let newTask = {
                                     taskState: 2,
